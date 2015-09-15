@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+}
+
+group = 'com.bol.feign'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+ext {
+    libraries = [:]
+    versions = [:]
+}
+
+versions += [
+        feign    : '6.1.1',
+        slf4j    : '1.7.6',
+        groovy   : '2.3.8',
+]
+
+libraries.feign = [
+        "com.netflix.feign:feign-core:${versions.feign}",
+        "com.netflix.feign:feign-jackson:${versions.feign}",
+        "com.netflix.feign:feign-jaxrs:${versions.feign}",
+]
+
+dependencies {
+    compile libraries.feign
+
+}

@@ -1,5 +1,8 @@
 package com.bol.feign.chronos.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <pre>
  * {
@@ -35,6 +38,11 @@ public class Job {
     private String cpus;
     private String mem;
     private String command;
+    private boolean async;
+    private String owner;
+    private int retries;
+    private List<EnvironmentVariables> environmentVariables;
+    private List<String> arguments;
 
     public String getSchedule() {
         return schedule;
@@ -82,5 +90,45 @@ public class Job {
 
     public void setCommand(String command) {
         this.command = command;
+    }
+
+    public boolean isAsync() {
+        return async;
+    }
+
+    public void setAsync(boolean async) {
+        this.async = async;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public int getRetries() {
+        return retries;
+    }
+
+    public void setRetries(int retries) {
+        this.retries = retries;
+    }
+
+    public List<EnvironmentVariables> getEnvironmentVariables() {
+        return environmentVariables;
+    }
+
+    public void setEnvironmentVariables(List<EnvironmentVariables> environmentVariables) {
+        this.environmentVariables = environmentVariables;
+    }
+
+    public List<String> getArguments() {
+        return arguments;
+    }
+
+    public void setArguments(List<String> arguments) {
+        this.arguments = arguments;
     }
 }

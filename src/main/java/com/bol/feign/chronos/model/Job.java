@@ -43,6 +43,7 @@ public class Job {
     private int retries;
     private List<EnvironmentVariables> environmentVariables;
     private List<String> arguments;
+    private boolean shell;
 
     public String getSchedule() {
         return schedule;
@@ -130,5 +131,13 @@ public class Job {
 
     public void setArguments(List<String> arguments) {
         this.arguments = arguments;
+    }
+
+    public boolean isShell() {
+        return shell;
+    }
+
+    public void setShell(boolean shell) {
+        this.shell = shell;
     }
 }

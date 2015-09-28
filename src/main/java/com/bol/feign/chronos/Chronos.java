@@ -4,6 +4,7 @@ import com.bol.feign.chronos.model.Job;
 import feign.RequestLine;
 
 import javax.inject.Named;
+import java.util.List;
 
 /**
  * See https://mesos.github.io/chronos/docs/api.html for the full API
@@ -20,4 +21,9 @@ public interface Chronos {
 
     @RequestLine("DELETE /scheduler/job/{name}")
     void deleteJob(@Named("name") String name);
+
+    @RequestLine("GET /scheduler/jobs")
+    List<Job> getJobs();
+
+
 }
